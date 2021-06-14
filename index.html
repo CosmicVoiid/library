@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+
+	<body>
+		<button type="button" id="button">Add Book</button>
+		<form class="form-container">
+			<div id="form">
+				<label for="title">
+                    Title: </br>
+				<input
+					type="text"
+					placeholder="Title"
+					id="title"
+					class="text"
+					required
+				/>
+            </label>
+
+				<label for="author">
+                Author: </br>
+				<input
+					type="text"
+					placeholder="Author"
+					id="author"
+					class="text"
+					required
+				/>
+                </label>
+
+				<label for="pages">
+					Pages:
+					<br />
+					<input
+						type="text"
+						placeholder="Pages"
+						id="pages"
+						class="text"
+						required
+					/>
+				</label>
+
+				<label for="read">
+					Read:
+					<input type="checkbox" id="read" required />
+				</label>
+			</div>
+		</form>
+		<div id="shelf"></div>
+		<script src="script.js"></script>
+	</body>
+</html>
