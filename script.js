@@ -33,20 +33,11 @@ const modal_overlay = document.querySelector("#modal-overlay");
 const exit_button = document.querySelector("#exit-btn");
 
 button.addEventListener("click", () => {
-	modal.classList.toggle("modal.closed");
-	modal.classList.toggle("modal");
-
-	modal_overlay.classList.toggle("modal-overlay.closed");
-	modal_overlay.classList.toggle("modal-overlay");
-	exit_button.style = "display: block";
+	modal.classList.toggle("closed");
+	modal_overlay.classList.toggle("closed");
 });
 
 exit_button.addEventListener("click", () => {
-	modal.classList.toggle("modal");
-	modal.classList.toggle("modal.closed");
-
-	modal_overlay.classList.remove("modal-overlay");
-	modal_overlay.classList.toggle("modal-overlay.closed");
-
-	exit_button.style = "display: none";
+	modal.classList.toggle("closed");
+	modal_overlay.classList.toggle("closed");
 });

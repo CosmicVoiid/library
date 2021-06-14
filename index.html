@@ -11,15 +11,22 @@
 	<body>
 		<button type="button" id="add-button">Add Book</button>
 
-		<div id="myModal" class="modal.closed">
+		<div id="myModal" class="modal closed">
 			<div class="modal-content">
 				<button id="exit-btn">
 					<span class="material-icons-outlined"> close </span>
 				</button>
+
+				<form>
+					<label for="title">
+						Title:
+						<input type="text" id="title" />
+					</label>
+				</form>
 			</div>
 		</div>
 
-		<div id="modal-overlay" class="modal-overlay.closed"></div>
+		<div id="modal-overlay" class="modal-overlay closed"></div>
 
 		<script src="script.js"></script>
 	</body>

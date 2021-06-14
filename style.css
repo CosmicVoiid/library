@@ -27,7 +27,7 @@ body {
 	background-color: #eee;
 }
 
-.modal.closed {
+.closed {
 	display: none;
 }
 
@@ -42,18 +42,13 @@ body {
 	opacity: 0.5;
 }
 
-.modal-overlay.closed {
-	display: none;
-}
-
 #exit-btn {
-	display: none;
 	border: none;
 	float: right;
 	position: relative;
 	top: 2px;
 	right: 2px;
-	color: #aaa;
+	color: black;
 }
 
 #exit-btn:hover {
