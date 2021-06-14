@@ -5,44 +5,58 @@ body {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	justify-content: center;
 }
 
-button {
+#add-button {
 	height: 50px;
 	width: 150px;
-	position: relative;
+	position: absolute;
 	top: 50px;
 }
 
-#shelf {
-	position: relative;
-	top: 10%;
-	width: 75%;
-	height: 500px;
-	border: 1px solid red;
+.modal {
+	width: 20%;
+	max-width: 100%;
+	height: 50%;
+	max-height: 100%;
+	border: 1px solid #333;
+	border-radius: 5px;
+	position: fixed;
+	z-index: 2;
+	background-color: #eee;
 }
 
-.form-container {
-	z-index: 1;
-	position: absolute;
-	top: 15%;
-	height: 35%;
-	width: 15%;
-	border: 3px solid lightgreen;
-	border-radius: 3px;
-	background-color: lightskyblue;
+.modal.closed {
+	display: none;
 }
 
-#form {
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 	height: 100%;
-	width: auto;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	position: relative;
-	left: 10px;
+	z-index: 1;
+	background-color: black;
+	opacity: 0.5;
 }
 
-.text {
-	width: 50%;
+.modal-overlay.closed {
+	display: none;
+}
+
+#exit-btn {
+	display: none;
+	border: none;
+	float: right;
+	position: relative;
+	top: 2px;
+	right: 2px;
+	color: #aaa;
+}
+
+#exit-btn:hover {
+	cursor: pointer;
+	color: black;
 }

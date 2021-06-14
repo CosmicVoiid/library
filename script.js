@@ -27,8 +27,26 @@ addBooktoLibrary(wallace);
 
 displayBooks();
 
-const shelf = document.querySelector("#shelf");
-const button = document.querySelector("button");
-const form = document.querySelector("form");
+const button = document.querySelector("#add-button");
+const modal = document.querySelector("#myModal");
+const modal_overlay = document.querySelector("#modal-overlay");
+const exit_button = document.querySelector("#exit-btn");
 
-button.addEventListener("click", () => {});
+button.addEventListener("click", () => {
+	modal.classList.toggle("modal.closed");
+	modal.classList.toggle("modal");
+
+	modal_overlay.classList.toggle("modal-overlay.closed");
+	modal_overlay.classList.toggle("modal-overlay");
+	exit_button.style = "display: block";
+});
+
+exit_button.addEventListener("click", () => {
+	modal.classList.toggle("modal");
+	modal.classList.toggle("modal.closed");
+
+	modal_overlay.classList.remove("modal-overlay");
+	modal_overlay.classList.toggle("modal-overlay.closed");
+
+	exit_button.style = "display: none";
+});
