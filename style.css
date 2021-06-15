@@ -24,7 +24,7 @@ body {
 	border-radius: 5px;
 	position: fixed;
 	z-index: 2;
-	background-color: #eee;
+	background-color: white;
 }
 
 .closed {
@@ -43,15 +43,20 @@ body {
 }
 
 #exit-btn {
-	border: none;
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
 	float: right;
 	position: relative;
-	top: 2px;
-	right: 2px;
+	top: 5px;
+	right: 5px;
 	color: black;
+	border-color: transparent;
+	background-color: transparent;
 }
 
 #exit-btn:hover {
+	background-color: #eee;
 	cursor: pointer;
-	color: black;
 }
