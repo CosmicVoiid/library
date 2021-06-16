@@ -27,6 +27,10 @@ body {
 	background-color: white;
 }
 
+.modal-content {
+	display: block;
+}
+
 .closed {
 	display: none;
 }
@@ -47,9 +51,9 @@ body {
 	width: 30px;
 	height: 30px;
 	text-align: center;
-	float: right;
+	float: right !important;
 	position: relative;
-	top: 5px;
+	bottom: 5px;
 	right: 5px;
 	color: black;
 	border-color: transparent;
@@ -59,4 +63,26 @@ body {
 #exit-btn:hover {
 	background-color: #eee;
 	cursor: pointer;
+}
+
+#form {
+	margin: 15px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 250px;
+	position: relative;
+	top: 30px;
+}
+
+#read-checkbox {
+	position: relative;
+	bottom: 9.5%;
+	right: 30%;
+}
+
+#submit-button {
+	width: 50%;
+	position: relative;
+	left: 25%;
 }
