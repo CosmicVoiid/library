@@ -18,25 +18,44 @@ function displayBooks() {
 }
 
 function read(check) {
-	if (check === "off") return "read";
-	else "not read";
+	if (check.checked) return "read";
+	else return "not read";
+}
+
+const grid_container = document.querySelector("#grid-container");
+function createGrid() {
+	let rows = giveRows(myLibraries);
+	console.log(rows);
+	let height = rows * 200;
+	grid_container.style.cssText = `height: ${height}px;`;
+	grid_container.style.setProperty("--rows", rows);
+	for (let i = 0; i < myLibraries.length; i++) {
+		const grid = document.createElement("div");
+		grid.textContent = `Title: ${myLibraries[i].title}`;
+		grid.classList.add("book");
+		grid_container.appendChild(grid);
+	}
+}
+
+function giveRows(lib) {
+	if (lib.length % 3 !== 0) return Math.floor(lib.length / 3) + 1;
+	else return lib.length / 3;
 }
 
 const theHobbit = new book("The Hobbit", "JRR Tolkien", 295, "not read");
 const dune = new book("Dune", "Spaceman", 400, "not read");
-const wallace = new book("Wallace and Gromit", "Playdough", 50, "read");
+const wallace = new book("Wallace and Gromit", "Clay", 50, "read");
 
 addBooktoLibrary(theHobbit);
 addBooktoLibrary(dune);
 addBooktoLibrary(wallace);
 
-//displayBooks();
-
+//HTML Editors
 const button = document.querySelector("#add-button");
 const modal = document.querySelector("#myModal");
 const modal_overlay = document.querySelector("#modal-overlay");
 const exit_button = document.querySelector("#exit-btn");
-const submit = document.querySelector("#submit-button");
+const form = document.querySelector("#form");
 
 const title_input = document.querySelector("#title");
 const author_input = document.querySelector("#author");
@@ -53,26 +72,20 @@ exit_button.addEventListener("click", () => {
 	modal_overlay.classList.toggle("closed");
 });
 
-submit.addEventListener("click", () => {
+form.addEventListener("submit", (e) => {
+	e.preventDefault();
 	modal.classList.toggle("closed");
 	modal_overlay.classList.toggle("closed");
 
 	let newTitle = title_input.value;
-	console.log(read_input.value);
 	newTitle = new book(
 		title_input.value,
 		author_input.value,
 		pages_input.value,
-		read(read_input.value)
-	);
-
-	console.log(
-		title_input.value,
-		author_input.value,
-		pages_input.value,
-		read_input.value
+		read(read_input)
 	);
 
 	addBooktoLibrary(newTitle);
 	displayBooks();
+	createGrid();
 });
