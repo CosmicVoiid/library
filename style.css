@@ -1,16 +1,45 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald&display=swap");
+
 body {
 	margin: 0;
 	height: 100vh;
 	width: 100vw;
 	display: flex;
 	justify-content: center;
+	background-color: #ede0d4;
+	font-family: "Oswald", sans-serif;
+}
+
+h1 {
+	position: relative;
+	font-size: 80px;
+	color: #361700;
+	left: 14%;
+	bottom: 0px;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="checkbox"],
+textarea {
+	background-color: #e6ccb2;
+	color: #7f5539;
+	border-color: #9c6644;
+	border-radius: 10px;
+	font-size: 18px;
+	padding-left: 7px;
+}
+
+#form {
+	color: #532200;
+	font-size: 18px;
 }
 
 #grid-container {
-	border: 1px solid red;
 	width: 75%;
 	height: 200px;
 	top: 20%;
+	right: 150px;
 	position: relative;
 	display: grid;
 	gap: 1em;
@@ -20,18 +49,33 @@ body {
 
 .book {
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid blue;
+	box-shadow: 5px 5px 5px #7f5539;
+	border: 2px solid #9c6644;
 	margin: 5px;
 	border-radius: 25px;
+	background-color: #ddb892;
+	color: #7f5539;
+}
+
+.book-contents {
+	font-size: 18px;
+	font-weight: bold;
+	margin: 5px;
 }
 
 #add-button {
 	height: 50px;
 	width: 150px;
 	position: absolute;
-	top: 50px;
+	top: 100px;
+	background-color: #ddb892;
+	color: #7f5539;
+	border-color: #9c6644;
+	border-radius: 7px;
+	font-weight: bold;
 }
 
 .modal {
@@ -39,11 +83,11 @@ body {
 	max-width: 100%;
 	height: 35%;
 	max-height: 100%;
-	border: 1px solid #333;
+	border: 1px solid #9c6644;
 	border-radius: 5px;
 	position: fixed;
 	z-index: 2;
-	background-color: white;
+	background-color: #b08968;
 	top: 20%;
 }
 
@@ -75,13 +119,31 @@ body {
 	position: relative;
 	bottom: 5px;
 	right: 5px;
-	color: black;
+	color: #532200;
 	border-color: transparent;
 	background-color: transparent;
 }
 
 #exit-btn:hover {
-	background-color: #eee;
+	background-color: #e6ccb2;
+	cursor: pointer;
+}
+
+.exit-btns {
+	border-radius: 50%;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	position: relative;
+	bottom: 70%;
+	left: 43%;
+	color: #532200;
+	border-color: transparent;
+	background-color: transparent;
+}
+
+.exit-btns:hover {
+	background-color: #e6ccb2;
 	cursor: pointer;
 }
 
@@ -105,4 +167,74 @@ body {
 	width: 50%;
 	position: relative;
 	left: 25%;
+	background-color: #e6ccb2;
+	border-radius: 7px;
+	border: none;
+	color: #532200;
+}
+
+#submit-button:hover {
+	box-shadow: 3px 3px 3px #532200;
+}
+
+/* slider */
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 50px;
+	height: 25px;
+	left: 35px;
+	top: 5px;
+}
+
+.switch input {
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+.slider {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #ede0d4;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 18px;
+	width: 18px;
+	left: 6px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: 0.4s;
+	transition: 0.4s;
+}
+
+input:checked + .slider {
+	background-color: #7f5539;
+}
+
+input:focus + .slider {
+	box-shadow: 0 0 1px #7f5539;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(20px);
+	-ms-transform: translateX(20px);
+	transform: translateX(20px);
+}
+
+.slider.round {
+	border-radius: 34px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }
